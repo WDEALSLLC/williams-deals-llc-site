@@ -1,0 +1,133 @@
+/* Williams Deals LLC Redesigned Dark Theme CSS */
+
+/* Colour variables */
+:root { --bg-color: #0a0a0a; --primary: #8a0d19; --accent: #d32f2f; --text-light: #f5f5f5; --text-muted: #b0b0b0; }
+
+/* Reset and base styles */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body { font-family: 'Roboto', sans-serif; line-height: 1.6; background: var(--bg-color); color: var(--text-light); }
+a { color: var(--accent); text-decoration: none; transition: color 0.3s; }
+a:hover { color: var(--primary); }
+
+/* Containers */
+.container { width: 90%; max-width: 1200px; margin: 0 auto; }
+
+/* Top bars */
+.top-bar, .notice-bar { background: var(--primary); color: var(--text-light); font-size: 0.85rem; padding: 0.5rem 0; }
+.top-bar .container, .notice-bar .container { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; }
+.top-bar .contact-item { display: flex; align-items: center; gap: 0.25rem; margin-right: 1rem; }
+.top-bar .contact-item i { color: var(--text-light); }
+.notice-bar p { width: 100%; text-align: center; }
+
+/* Navigation */
+.navbar { background: #111; color: var(--text-light); padding: 1rem 0; position: sticky; top: 0; z-index: 999; }
+.navbar .container { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.75rem; font-weight: 700; color: var(--accent); }
+.nav-links { list-style: none; display: flex; gap: 2rem; }
+.nav-links a { color: var(--text-light); position: relative; font-weight: 500; }
+.nav-links a::after { content: ''; display: block; height: 2px; background: var(--accent); width: 0; transition: width 0.3s; margin-top: 4px; }
+.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+
+/* Hero */
+.hero {
+  /* Add a background image using the provided site screenshot with a dark overlay */
+  /* Slightly darken the overlay so the white text remains readable */
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/screenshot.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 6rem 0;
+  text-align: center;
+}
+.hero h1 { font-size: 2.5rem; margin-bottom: 0.75rem; color: var(--accent); }
+.hero p { max-width: 700px; margin: 0 auto 2rem; color: var(--text-muted); font-size: 1.1rem; }
+.product-cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 2.5rem; }
+.product-card { background: #1e1e1e; border-radius: 8px; padding: 2rem 1.5rem; width: 280px; position: relative; box-shadow: 0 4px 8px rgba(0,0,0,0.3); display: flex; flex-direction: column; align-items: center; text-align: center; }
+.product-card i { font-size: 3rem; color: var(--accent); margin-bottom: 1rem; }
+/* Utility class for large emojis used as illustrative icons */
+.icon-large {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+  line-height: 1;
+}
+.product-card h3 { font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--text-light); }
+.product-card .price { background: var(--primary); color: var(--text-light); padding: 0.25rem 0.5rem; border-radius: 4px; position: absolute; top: 1rem; right: 1rem; font-size: 0.9rem; font-weight: 500; }
+.product-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem; line-height: 1.4; }
+.product-card .btn { display: inline-block; background: var(--accent); color: var(--text-light); padding: 0.5rem 1.25rem; border-radius: 4px; font-weight: 500; transition: background 0.3s; }
+.product-card .btn:hover { background: var(--primary); }
+
+/* Sections backgrounds */
+.brands, .guarantee, .services-section, .about-section, .payments { padding: 4rem 0; text-align: center; }
+.brands { background: #0f0f0f; }
+.payments { background: #1a1a1a; }
+.guarantee { background: #0f0f0f; }
+.services-section { background: #0f0f0f; }
+.about-section { background: #0f0f0f; }
+
+/* Section headings and text */
+.brands h2, .payments h2, .guarantee h2, .services-section h2, .about-section h2 { font-size: 2rem; margin-bottom: 1rem; color: var(--accent); }
+.brands p, .payments p, .guarantee p, .services-section p, .about-section p { color: var(--text-muted); max-width: 700px; margin: 0 auto 3rem; }
+
+/* Grids */
+.brand-icons, .payment-icons, .guarantee-items, .services-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; }
+.brand-icon, .payment-icon, .guarantee-item, .service-card { background: #1e1e1e; color: var(--text-light); border-radius: 8px; padding: 1.5rem; box-shadow: 0 4px 8px rgba(0,0,0,0.3); width: 280px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.brand-icon i, .payment-icon i, .guarantee-item i, .service-card i { font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem; }
+.brand-icon span, .payment-icon span { font-size: 0.9rem; }
+.guarantee-item h3, .service-card h3 { font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--text-light); }
+.guarantee-item p, .service-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; }
+
+/* Quick links */
+.quick-links { background: #1a1a1a; padding: 2.5rem 0; text-align: center; }
+.quick-links h2 { font-size: 2rem; margin-bottom: 1rem; color: var(--accent); }
+.link-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 2rem; }
+.link-grid a { background: var(--primary); color: var(--text-light); padding: 0.75rem 1.75rem; border-radius: 4px; font-weight: 500; transition: background 0.3s; }
+.link-grid a:hover { background: var(--accent); }
+
+/* Page header */
+.page-header { background: #131313; padding: 4rem 0; text-align: center; color: var(--text-light); }
+.page-header h1 { font-size: 2.5rem; margin-bottom: 1rem; color: var(--accent); }
+.page-header p { max-width: 700px; margin: 0 auto; color: var(--text-muted); }
+
+/* Values list */
+.values-list { list-style: none; max-width: 700px; margin: 0 auto; text-align: left; color: var(--text-light); }
+.values-list li { margin-bottom: 1rem; padding-left: 1.5rem; position: relative; }
+.values-list li::before {
+  /* Use a native check emoji instead of Font Awesome to avoid external dependencies */
+  content: '✔️';
+  color: var(--accent);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Contact section */
+.contact-section { background: #0f0f0f; padding: 4rem 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 3rem; }
+.contact-info { flex: 1 1 300px; max-width: 450px; }
+.contact-info h2 { font-size: 2rem; margin-bottom: 1rem; color: var(--accent); }
+.info-item { display: flex; align-items: center; margin-bottom: 1rem; color: var(--text-muted); font-size: 0.95rem; }
+.info-item i { margin-right: 0.5rem; color: var(--accent); font-size: 1.25rem; }
+.contact-form-container { flex: 1 1 300px; max-width: 450px; }
+.contact-form-container h2 { font-size: 2rem; margin-bottom: 1rem; color: var(--accent); text-align: center; }
+.contact-form { background: #131313; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); display: flex; flex-direction: column; gap: 1rem; }
+.contact-form .form-group { display: flex; flex-direction: column; }
+.contact-form label { margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.95rem; }
+.contact-form input, .contact-form textarea { padding: 0.75rem; border: 1px solid #333; border-radius: 4px; background: #0f0f0f; color: var(--text-light); font-size: 1rem; }
+.contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px rgba(211,47,47,0.5); }
+.contact-form button { align-self: flex-start; background: var(--accent); color: var(--text-light); border: none; padding: 0.75rem 1.5rem; border-radius: 4px; font-weight: 500; cursor: pointer; transition: background 0.3s; }
+.contact-form button:hover { background: var(--primary); }
+
+/* Footer */
+footer { background: #111; color: var(--text-muted); text-align: center; padding: 2rem 0; font-size: 0.85rem; }
+footer .container { display: flex; flex-direction: column; gap: 0.75rem; align-items: center; }
+footer a { color: var(--text-muted); }
+footer a:hover { color: var(--accent); }
+
+/* Responsive */
+@media(max-width:768px) {
+  .nav-links { gap: 1rem; }
+  .product-card, .guarantee-item, .service-card { width: 100%; }
+  .contact-section { flex-direction: column; align-items: center; }
+  .contact-info, .contact-form-container { max-width: 100%; }
+}
